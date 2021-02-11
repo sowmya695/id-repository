@@ -408,13 +408,16 @@ public class CredentialStoreServiceImpl implements CredentialStoreService {
 					if (partnerExtractorDto.getAttributeName().equalsIgnoreCase(dto.getAttributeName())) {
 						if(partnerExtractorDto.getBiometric().contains(CredentialConstants.FACE)){
 							formatterMap.put(CredentialConstants.FACE,
-									partnerExtractorDto.getExtractor().getProvider());
+										partnerExtractorDto.getExtractor().getProvider() + "-"
+												+ partnerExtractorDto.getExtractor().getVersion());
 						} else if (partnerExtractorDto.getBiometric().contains(CredentialConstants.IRIS)) {
 							formatterMap.put(CredentialConstants.IRIS,
-									partnerExtractorDto.getExtractor().getProvider());
+										partnerExtractorDto.getExtractor().getProvider() + "-"
+												+ partnerExtractorDto.getExtractor().getVersion());
 						} else if (partnerExtractorDto.getBiometric().contains(CredentialConstants.FINGER)) {
 							formatterMap.put(CredentialConstants.FINGER,
-									partnerExtractorDto.getExtractor().getProvider());
+										partnerExtractorDto.getExtractor().getProvider() + "-"
+												+ partnerExtractorDto.getExtractor().getVersion());
 		               }
 					}
 
